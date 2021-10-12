@@ -1,5 +1,9 @@
+export type ColorTypes = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';
+export type EffectTypes = 'bright' | 'dim' | 'italic' | 'underscore' | 'blink';
+export type BlackWhiteTypes = 'black' | 'white';
+
 export const Reset = '\x1b[0m';
-export const effects : Record <string, string> = {
+export const effects : Record <EffectTypes, string> = {
     bright: '\x1b[1m',
     dim: '\x1b[2m',
     italic: '\x1b[3m',
@@ -7,7 +11,7 @@ export const effects : Record <string, string> = {
     blink: '\x1b[5m',
 };
 
-export const fontColors : Record <string, string> = {
+export const fontColors : Record <ColorTypes, string> = {
     black: '\x1b[30m',
     red: '\x1b[31m',
     green: '\x1b[32m',
@@ -18,7 +22,7 @@ export const fontColors : Record <string, string> = {
     white: '\x1b[37m',
 };
 
-export const backgroundColors : Record <string, string> = {
+export const backgroundColors : Record <ColorTypes, string> = {
     black: '\x1b[40m',
     red: '\x1b[41m',
     green: '\x1b[42m',
@@ -29,7 +33,7 @@ export const backgroundColors : Record <string, string> = {
     white: '\x1b[47m',
 };
 
-export const contrast : Record <string, string> = {
+export const contrast : Record <ColorTypes, BlackWhiteTypes> = {
     black: 'white',
     red: 'black',
     green: 'black',
@@ -39,3 +43,16 @@ export const contrast : Record <string, string> = {
     cyan: 'black',
     white: 'black',
 };
+
+export interface IColorOptions {
+    font?: ColorTypes,
+    background?: ColorTypes,
+    effects?: EffectTypes[]
+}
+
+export interface IMDOptions {
+    bold?: boolean,
+    italic?: boolean,
+    mono?: boolean,
+    link?: string
+}
