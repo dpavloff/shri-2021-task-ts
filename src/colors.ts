@@ -9,7 +9,7 @@ function addColor(text:string, color:string, isBackground = false) {
 function getEffects(effectList : string[]) : string {
     return effectList.map(effect => effects[effect]).join('');
 }
-export function color(text:string, options?: { font?: string, background?: string, effects?: string[]}) {
+export function color(text:string, options?: { font?: string, background?: string, effects?: string[]}) : string {
     const preparedText = text.replace(/ё/g, 'е');
     let result = '';
     if (options) {
