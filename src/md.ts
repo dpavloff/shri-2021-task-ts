@@ -1,7 +1,6 @@
 import { color } from './colors';
-import { MarkdownOptions } from './model';
 
-export function markdown(text : string, options?: Partial<MarkdownOptions>) : string {
+export function markdown(text: string, options?: {bold?: boolean, italic?: boolean, mono?: boolean, link?: string}) {
     let result = text;
     if (options) {
         if (options.bold) {

@@ -1,16 +1,14 @@
 import { color } from './colors';
 import { markdown } from './md';
 
-import { ColorOptions, MarkdownOptions, isColorOptions, isMarkdownOptions } from './model';
-
-export function style(text : string, options: Partial<ColorOptions> | Partial<MarkdownOptions>) {
+export function style(text: string, options: {font?: string, background?: string, effects?: string[]} | {bold?: boolean, italic?: boolean, mono?: boolean, link?: string}) {
     if (text.length === 0) {
         return text;
     }
-    if (isColorOptions(options)) {
+    if ('font' in options || 'background' in options || 'effects' in options) {
         return color(text, options);
     }
-    if (isMarkdownOptions(options)) {
+    if ('bold' in options || 'italic' in options || 'mono' in options || 'link' in options) {
         return markdown(text, options);
     }
     return text;
