@@ -5,6 +5,7 @@ function addColor(text:string, color:string, isBackground = false) {
     }
     return text + fontColors[color];
 }
+
 function getEffects(effectList : string[]) : string {
     return effectList.map(effect => effects[effect]).join('');
 }

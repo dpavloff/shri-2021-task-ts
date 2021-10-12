@@ -6,6 +6,7 @@ export const effects : Record <string, string> = {
     underscore: '\x1b[4m',
     blink: '\x1b[5m',
 };
+
 export const fontColors : Record <string, string> = {
     black: '\x1b[30m',
     red: '\x1b[31m',
@@ -16,6 +17,7 @@ export const fontColors : Record <string, string> = {
     cyan: '\x1b[36m',
     white: '\x1b[37m',
 };
+
 export const backgroundColors : Record <string, string> = {
     black: '\x1b[40m',
     red: '\x1b[41m',
@@ -26,6 +28,7 @@ export const backgroundColors : Record <string, string> = {
     cyan: '\x1b[46m',
     white: '\x1b[47m',
 };
+
 export const contrast : Record <string, string> = {
     black: 'white',
     red: 'black',

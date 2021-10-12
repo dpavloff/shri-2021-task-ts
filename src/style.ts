@@ -1,5 +1,6 @@
 import { color } from './colors';
 import { markdown } from './md';
+
 export function style(text: string, options: {font?: string, background?: string, effects?: string[]} | {bold?: boolean, italic?: boolean, mono?: boolean, link?: string}) {
     if (text.length === 0) {
         return text;
