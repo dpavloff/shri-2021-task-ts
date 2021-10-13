@@ -14,7 +14,7 @@ export function color(text:string, options?: IColorOptions) : string {
     const preparedText = text.replace(/ё/g, 'е');
     let result = '';
     if (options) {
-        if (options.font) {
+        if (options.font) { 
             result = addColor(result, options.font);
         }
         if (options.background) {
